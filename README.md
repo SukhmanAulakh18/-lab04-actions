@@ -103,3 +103,5 @@ git pull origin main
 - If you see “Workflows aren’t being run on this forked repository” banner, click “Enable workflows”.
 - If Maven isn’t installed locally, install via Homebrew: `brew install maven`.
 - Java 17 JDK required locally; on macOS you can use Temurin (Adoptium).
+
+## CI Demo - Testing PR workflow
