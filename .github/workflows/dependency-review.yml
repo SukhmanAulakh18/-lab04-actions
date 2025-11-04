@@ -1,0 +1,25 @@
+name: Dependency Review
+
+on:
+  pull_request:
+    branches: [ "main", "master", "staging" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    name: Review dependencies on PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Dependency review
+        uses: actions/dependency-review-action@v4
+        with:
+          # Fail on vulnerabilities of these severities or higher (adjust per assignment):
+          fail-on-severity: high
+          # Allow list example (optional):
+          # allow-licenses: MIT,Apache-2.0
